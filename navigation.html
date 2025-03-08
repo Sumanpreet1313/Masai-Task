@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        header {
+            background-color: #e76f51;
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+        }
+
+        nav {
+            margin: 10px 0;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .nav-section {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .nav-section a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-section > a {
+            font-weight: bold;
+            background-color: #444;
+        }
+
+        .nav-section a:hover {
+            background-color: #555;
+        }
+
+        .nav-section a:active {
+            background-color: #777;
+        }
+
+        .nav-section a[href^="https"] {
+            color: gold !important;
+        }
+
+        section {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #e76f51;
+            padding: 10px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* CSS combinators */
+        div p {
+            color: blue;
+        }
+        div > p {
+            font-weight: bold;
+        }
+
+        /* Interactive list styles */
+        ol li:first-child {
+            font-weight: bold;
+        }
+        ol li:first-child + li {
+            background-color: lightgray;
+        }
+        ol li:nth-child(3) ~ li {
+            font-style: italic;
+        }
+        ol li:hover {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <div class="nav-section">
+                <a href="#about">About</a>
+                <a href="#team">Our Team</a>
+            </div>
+            <div class="nav-section">
+                <a href="#projects">Projects</a>
+                <a href="#portfolio">Portfolio</a>
+            </div>
+            <div class="nav-section">
+                <a href="#contact">Contact</a>
+                <a href="https://external-link.com">External</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a web developer passionate about creating functional and beautiful web applications.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div>
+            <h3>Project One: Personal Blog</h3>
+            <p>A personal blog where I write about web development, programming, and technology.</p>
+        </div>
+        <div>
+            <h3>Project Two: E-commerce Site</h3>
+            <p>An e-commerce website built to simulate a real-world online shopping experience.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <div>
+        <p>This is a direct child paragraph of div.</p>
+        <section>
+            <p>This is a nested paragraph inside a section.</p>
+        </section>
+    </div>
+
+    <section>
+        <h2>Interactive List</h2>
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ol>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+</body>
+</html>
