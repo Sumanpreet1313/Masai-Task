@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Method CSS Example</title>
+    <style>
+        /* Remove default margin and padding from all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Set the background color of the entire page */
+        body {
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Style for the main title */
+        #main-title {
+            font-size: 32px;
+            color: darkblue;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Style for the subtitle */
+        #subtitle {
+            font-size: 24px;
+            color: darkgreen;
+            margin-bottom: 15px;
+        }
+
+        /* Default style for all paragraphs */
+        p {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px auto;
+            width: 80%;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        /* Internal CSS correction */
+        h1 {
+            color: navy;
+            font-size: 28px;
+            background-color: #f0f0f0;
+        }
+
+        .highlighted-text {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="main-title">Main Title</h1>
+    <h2 id="subtitle">Learning CSS Styling</h2>
+    <p style="font-size: 16px; color: #333;">This paragraph has inline styles applied.</p>
+    <p class="highlighted-text">This paragraph uses a class-based style.</p>
+    <div id="main-container">
+        <p>This div should have styles from the external stylesheet.</p>
+    </div>
+</body>
+</html>
