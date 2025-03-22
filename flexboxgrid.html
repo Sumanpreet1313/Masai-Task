@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background-color: yellow;
+            padding: 20px;
+            border: 2px dotted black;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+            background-color: lightgray;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .image {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 16px;
+        }
+
+        .read-more {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="image">Image</div>
+            <div class="content">
+                <div class="title">Title</div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem. Voluptate, tempore quos, suscipit temporibus autem sapiente.</div>
+                <div class="read-more">Read more</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">Image</div>
+            <div class="content">
+                <div class="title">Title</div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem. Voluptate, tempore quos, suscipit temporibus autem sapiente.</div>
+                <div class="read-more">Read more</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image">Image</div>
+            <div class="content">
+                <div class="title">Title</div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vero deleniti incidunt rem. Voluptate, tempore quos, suscipit temporibus autem sapiente.</div>
+                <div class="read-more">Read more</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

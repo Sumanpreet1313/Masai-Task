@@ -1,0 +1,92 @@
+/* Base styles: Mobile-first approach */
+html {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+.item {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.hamburger {
+    display: block;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+.nav-links.active {
+    display: flex;
+}
+
+/* Ensure proper scaling on all devices */
+meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1";
+}
+
+/* For screens larger than 600px: Increase font size */
+@media (min-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* For screens larger than 768px: Navbar is vertical */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* For screens larger than 1024px: Navbar is horizontal */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+    }
+    .hamburger {
+        display: none;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investors Page</title>
+    <style>
+        /* Base styles: Mobile-first approach */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Investors Page */
+        .investors-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .investor-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .investor-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .investor-card h2 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .investor-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Responsive Layout */
+        @media (min-width: 600px) {
+            .investors-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .investors-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Strategic Investors</h1>
+    <div class="investors-container">
+        <div class="investor-card">
+            <img src="https://www.masaischool.com/investor1.jpg" alt="Investor 1">
+            <h2>Vijay Shekhar Sharma</h2>
+            <p>Founder & CEO, Paytm</p>
+        </div>
+        <div class="investor-card">
+            <img src="https://www.masaischool.com/investor2.jpg" alt="Investor 2">
+            <h2>Kunal Shah</h2>
+            <p>Founder, CRED</p>
+        </div>
+        <div class="investor-card">
+            <img src="https://www.masaischool.com/investor3.jpg" alt="Investor 3">
+            <h2>Amrish Rau</h2>
+            <p>CEO, Pine Labs</p>
+        </div>
+        <div class="investor-card">
+            <img src="https://www.masaischool.com/investor4.jpg" alt="Investor 4">
+            <h2>Sampad Swain</h2>
+            <p>Co-founder & CEO, Instamojo</p>
+        </div>
+        <!-- Add more investor cards here -->
+    </div>
+</body>
+</html>
