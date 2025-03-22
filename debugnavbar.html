@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Navbar Layout</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between; /* Logo left, links right */
+      align-items: center; /* Align items vertically */
+      background-color: #333;
+      padding: 15px 20px;
+    }
+
+    /* Logo Styling */
+    .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Navigation Links */
+    .links {
+      display: flex; /* Arrange links horizontally */
+      gap: 20px; /* Even spacing between links */
+    }
+
+    /* Links Styling */
+    .links a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover Effect */
+    .links a:hover {
+      color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Logo</div>
+    <div class="links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+</body>
+</html>
