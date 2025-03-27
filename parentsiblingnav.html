@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibling and Parent Node Example</title>
+    <style>
+        #container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+        li {
+            cursor: pointer;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <ul id="list">
+            <li id="item1">Item 1</li>
+            <li id="item2">Item 2</li>
+            <li id="item3">Item 3</li>
+        </ul>
+    </div>
+
+    <script>
+        const item2 = document.getElementById('item2');
+
+        item2.addEventListener('click', function() {
+            // Display the parent's text content
+            alert(item2.parentNode.textContent);
+
+            // Log the previous and next sibling text contents
+            console.log("Previous Sibling Text:", item2.previousElementSibling.textContent);
+            console.log("Next Sibling Text:", item2.nextElementSibling.textContent);
+        });
+    </script>
+
+</body>
+</html>

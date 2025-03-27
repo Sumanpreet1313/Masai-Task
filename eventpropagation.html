@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+    <style>
+        .outer, .middle, .inner {
+            padding: 30px;
+            border: 2px solid #333;
+            margin: 10px;
+        }
+        .outer {
+            background-color: #f9c2c2;
+        }
+        .middle {
+            background-color: #c2f9d9;
+        }
+        .inner {
+            background-color: #c2d4f9;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outer" id="outerDiv">
+        Outer Div
+        <div class="middle" id="middleDiv">
+            Middle Div
+            <div class="inner" id="innerDiv">
+                Inner Div
+                <button id="innerButton">Inner Button</button>
+            </div>
+            <button id="middleButton">Middle Button</button>
+        </div>
+        <button id="outerButton">Outer Button</button>
+    </div>
+
+    <script>
+        // Helper function to show alerts
+        function showAlert(name, phase) {
+            alert(`${name} clicked during ${phase} phase`);
+        }
+
+        // Add event listeners to divs (capturing and bubbling)
+        ['outerDiv', 'middleDiv', 'innerDiv'].forEach(id => {
+            const div = document.getElementById(id);
+            // Capturing phase
+            div.addEventListener('click', (e) => showAlert(id, 'capturing'), true);
+            // Bubbling phase
+            div.addEventListener('click', (e) => showAlert(id, 'bubbling'), false);
+        });
+
+        // Add event listeners to buttons
+        document.getElementById('outerButton').addEventListener('click', () => alert('Outer Button clicked'));
+        document.getElementById('middleButton').addEventListener('click', () => alert('Middle Button clicked'));
+
+        document.getElementById('innerButton').addEventListener('click', (e) => {
+            alert('Inner Button clicked (stopping propagation)');
+            e.stopPropagation(); // Stops the event from bubbling or capturing further
+        });
+    </script>
+
+</body>
+</html>
