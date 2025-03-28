@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Form with localStorage</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; transition: background-color 0.5s, color 0.5s; }
+    </style>
+</head>
+<body>
+    <h1>User Preferences</h1>
+    <form id="preferencesForm">
+        <label for="theme">Theme:</label>
+        <select id="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </select>
+
+        <label for="language">Language:</label>
+        <select id="language">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+        </select>
+
+        <label for="notifications">Notifications:</label>
+        <input type="checkbox" id="notifications">
+
+        <button type="submit">Save Preferences</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('preferencesForm');
+        const theme = document.getElementById('theme');
+        const language = document.getElementById('language');
+        const notifications = document.getElementById('notifications');
+
+        // Apply theme dynamically
+        function applyTheme(selectedTheme) {
+            document.body.style.backgroundColor = selectedTheme === "dark" ? "#333333" : "#ffffff";
+            document.body.style.color = selectedTheme === "dark" ? "#ffffff" : "#000000";
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const preferences = {
+                theme: theme.value,
+                language: language.value,
+                notifications: notifications.checked
+            };
+            localStorage.setItem('preferences', JSON.stringify(preferences));
+            applyTheme(preferences.theme);
+            alert('Preferences Saved!');
+        });
+
+        // Load preferences on page load
+        window.onload = () => {
+            const storedPreferences = localStorage.getItem('preferences');
+            if (storedPreferences) {
+                const preferences = JSON.parse(storedPreferences);
+                theme.value = preferences.theme;
+                language.value = preferences.language;
+                notifications.checked = preferences.notifications;
+                applyTheme(preferences.theme);
+            }
+        };
+    </script>
+</body>
+</html>
